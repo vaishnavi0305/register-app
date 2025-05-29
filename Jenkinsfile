@@ -7,7 +7,9 @@ pipeline {
 	stages {
 		stage("Cleanup Workspace"){
 			steps{
+				echo "starting Cleaning workspace"
 				cleanWS()
+				echo "Workspace cleaned"
 			}
 		}
 		stage("Checkout From SCM"){
