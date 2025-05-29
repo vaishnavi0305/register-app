@@ -1,5 +1,8 @@
 pipeline {
 	agent { label 'JenkinsAgent' }
+	options {
+        	skipDefaultCheckout(true)
+    	}
 	tools{
 		jdk 'JDK21'
 		maven 'Maven3'
@@ -8,7 +11,7 @@ pipeline {
 		stage("Cleanup Workspace"){
 			steps{
 				echo "starting Cleaning workspace"
-				cleanWS()
+				cleanWs()
 				echo "Workspace cleaned"
 			}
 		}
